@@ -24,8 +24,8 @@
                                 <option value="">Selecciona una Opcion</option>
                                 <option value="N_ASC">Nombre ascendente</option>
                                 <option value="N_DESC">Nombre descentente</option>
-                                <option value="C_ASC">Correo ascendente</option>
-                                <option value="C_DESC">Correo descentene</option>
+                                <option value="C_ASC">email ascendente</option>
+                                <option value="C_DESC">email descentene</option>
 
                             </select>
                         </div>
@@ -38,7 +38,7 @@
                             <select name="buscarSelect" id="buscarSelect" class="form-control">
                                 <option value="">Selecciones una opcion</option>
                                 <option value="name">Buscar por nombre</option>
-                                <option value="email">Buscar por correo</option>
+                                <option value="email">Buscar por email</option>
                             </select>
                         </div>
                         <div class="col-sm-3">
@@ -55,7 +55,7 @@
     <tr>
     <th>Id</th>
     <th>Nombre</th>
-    <th>Correo</th>
+    <th>email</th>
     <th>Contraseña</th>
     <th>Tipo</th>
     <th>Status</th>

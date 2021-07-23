@@ -24,8 +24,8 @@
                             <input type="text"  id="nombre" name="nombre" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="username">Correo:</label><br>
-                                <input type="text" name="correo" id="correo" class="form-control" required>
+                                <label for="username">email:</label><br>
+                                <input type="text" name="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Contraseña:</label><br>

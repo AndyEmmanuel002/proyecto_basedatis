@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$actualsesion = $_SESSION['correo'];
+$actualsesion = $_SESSION['email'];
 
 if($actualsesion == null || $actualsesion == ''){
 

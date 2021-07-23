@@ -28,7 +28,7 @@
 <tr>
 <th>Id</th>
 <th>Nombre</th>
-<th>Correo</th>
+<th>email</th>
 <th>Telefono</th>
 <th>Direccion</th>
 <th>Registro</th>

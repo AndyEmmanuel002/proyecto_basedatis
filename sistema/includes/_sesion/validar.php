@@ -4,14 +4,14 @@
  * Validacion de datos para poder iniciar sesion
  */
 require_once ("../_db.php");
-$correo=$_POST['correo'];
+$email=$_POST['email'];
 $password=$_POST['password'];
 session_start();
-$_SESSION['correo']=$correo;
+$_SESSION['email']=$email;
 
 
-$conexion=mysqli_connect("localhost","root","","sistema");
-$consulta="SELECT*FROM empleados where correo='$correo' and password='$password'";
+$conexion=mysqli_connect("sql5.freemysqlhosting.net","sql5425622","xxBlTNGtUr","sql5425622");
+$consulta="SELECT*FROM empleados where email='$email' and password='$password'";
 $resultado=mysqli_query($conexion,$consulta);
 $filas=mysqli_num_rows($resultado);
 
@@ -33,15 +33,15 @@ if($filas){
    * Parte de registro de usuarios
    */
  if(isset ($_POST['registrar'])){
-if (strlen($_POST['nombre']) && strlen($_POST['correo']) && strlen($_POST['password']) && strlen($_POST['tipo'])) {
+if (strlen($_POST['nombre']) && strlen($_POST['email']) && strlen($_POST['password']) && strlen($_POST['tipo'])) {
       $nombre = trim($_POST['nombre']);
-      $correo = trim($_POST['correo']);
+      $email = trim($_POST['email']);
       $password = trim($_POST['password']);
       $telefono = trim($_POST['tipo']);
       
 
-      $consulta = "INSERT INTO empleados (nombre, correo, tipo, password)
-      VALUES ('$nombre', '$correo', '$telefono', '$password')";
+      $consulta = "INSERT INTO empleados (nombre, email, tipo, password)
+      VALUES ('$nombre', '$email', '$telefono', '$password')";
 
      mysqli_query($conexion, $consulta);
      mysqli_close($conexion);

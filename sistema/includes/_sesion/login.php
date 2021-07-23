@@ -20,8 +20,8 @@
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center">Login</h3>
                             <div class="form-group">
-                                <label for="username">Correo:</label><br>
-                                <input type="text" name="correo" id="correo" class="form-control" required>
+                                <label for="username">email:</label><br>
+                                <input type="text" name="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Contraseña:</label><br>

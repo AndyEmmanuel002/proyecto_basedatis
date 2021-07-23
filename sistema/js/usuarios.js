@@ -64,7 +64,7 @@ selectData({type: 'ordenamiento',valor})
 })
 $('#btnBuscar').click(function(){
     const valor = $('#buscar').val()
-    const forma = $('#buscarSelect').val()
+     const forma = $('#buscarSelect').val()
      console.log(valor)  
      selectData({type: 'buscar',valor,forma})
 })

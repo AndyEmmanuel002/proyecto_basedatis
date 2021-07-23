@@ -71,13 +71,13 @@ function selectData(respuesta = '') {
         })
         .then((res) => res.json())
         .then((response) => {
+            $('#id').val(response.id);
             $('#nombre').val(response.nombre);
-            $('#descripcion').val(response.descripcion);
-            $('#color').val(response.color);
-            $('#precio').val(response.precio);
-            $('#cantidad').val(response.cantidad);
-            $('#cantidad_min').val(response.cantidad_min);
-            $('#categorias').val(response.categorias);
+            $('#email').val(response.email);
+            $('#password').val(response.password);
+            $('#rango').val(response.rango);
+            $('#status').val(status);
+        
             console.log(response)})
         }
         })
@@ -105,3 +105,26 @@ function selectData(respuesta = '') {
     selectData()  
     })
   })
+  $('#table-data').on('click','.eliminar', function(e) {
+    e.preventDefault()
+    const id = $(this).data('id')
+    const confirmacion = confirm('¿Desea eliminar el registro?');
+    let formularioDatos = new FormData()
+    formularioDatos.append('accion', 'clientes_eliminar')
+    formularioDatos.append('id', id)
+  
+    if (confirmacion) {
+        fetch('../../includes/_functions.php', {
+        method: 'POST',
+        body: formularioDatos
+        
+     }) 
+     .then((res) => res.json())
+     .then((response) => {alert(`${response.tittle}:${response.text}`)
+  })
+     
+  } 
+  selectData()  
+  
+    
+})

@@ -17,10 +17,35 @@ if (isset($_POST['accion'])){
         case 'usuario_eliminar':
             usuario_eliminar();
         break;
+        case 'editar_tabla':
+            editar_tabla();
+        break;
+        case 'clientes_eliminar':
+            clientes_eliminar();
+        break;  
     }
 
 }
 
+function editar_tabla(){
+    global $conexion;
+    $id = $_POST['id'];
+    $consulta = "SELECT * FROM empleados WHERE id = $id LIMIT 1";
+    $resultado = mysqli_query($conexion, $consulta);
+ 
+    $row = mysqli_fetch_assoc($resultado);
+
+        $prdctFinal = [
+            //"id" => $value['id'],
+            //"nombre" => $value['nombre'],
+            //"email" => $value['email'],
+            //"password" => $value['password'],
+            //"rango" => $value['rango'],
+            //"status" => $value['status']
+        ];
+    
+    echo json_encode($prdctFinal);
+}
 //funcion de permisos
 function permiso_usuairos(){
     global $conexion;
@@ -50,7 +75,7 @@ function eliminar_permiso(){
     global $conexion;
     extract($_POST);
     $id = $_POST['id'];
-    $consulta = "DELETE FROM permisos WHERE id = $id";
+    $consulta = "DELETE FROM rol WHERE id = $id";
     mysqli_query($conexion, $consulta);
     
     
@@ -142,6 +167,28 @@ function usuario_eliminar(){
     extract($_POST);
     $id = $_POST['id'];
     $consulta = "DELETE FROM empleados WHERE id = $id";
+    mysqli_query($conexion, $consulta);
+    
+    
+    $respuesta = ['type' => 'error',
+    'tittle' => 'operacion interrumpida',
+    'text' => mysqli_error($conexion)];
+
+    
+    if(mysqli_affected_rows($conexion) > 0){
+        $respuesta = ['type' => 'success',
+        'tittle' => 'operacion finalizada',
+        'text' => 'Eliminado Correctamente'];
+    
+    }
+
+    echo json_encode($respuesta);
+}
+function clientes_eliminar(){
+    global $conexion;
+    extract($_POST);
+    $id = $_POST['id'];
+    $consulta = "DELETE FROM clientes WHERE id = $id";
     mysqli_query($conexion, $consulta);
     
     

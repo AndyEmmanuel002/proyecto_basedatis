@@ -114,13 +114,12 @@ if(confirmacion){
 })
 .then((res) => res.json())
 .then((response) => {
+    $('#id').val(response.id);
     $('#nombre').val(response.nombre);
-    $('#descripcion').val(response.descripcion);
-    $('#color').val(response.color);
-    $('#precio').val(response.precio);
-    $('#cantidad').val(response.cantidad);
-    $('#cantidad_min').val(response.cantidad_min);
-    $('#categorias').val(response.categorias);
+    $('#email').val(response.email);
+    $('#password').val(response.password);
+    $('#rango').val(response.rango);
+    $('#status').val(status);
     console.log(response)})
 }
 })
